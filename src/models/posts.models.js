@@ -1,3 +1,25 @@
-const Posts = 'something'
+const { DataTypes } = require("sequelize");
+const db = require("../utils/database");
 
-module.exports = Posts
+const Posts = db.define("posts", {
+    id: {
+        type: DataTypes.BIGINT,
+        autoIncrement: true,
+        primaryKey: true,
+    },
+    content: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+    },
+    userName: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    published: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+    },
+});
+
+module.exports = Posts;
