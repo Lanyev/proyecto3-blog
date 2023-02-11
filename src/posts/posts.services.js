@@ -26,7 +26,7 @@ const findPostById = async (req, res) => {
         });
 };
 
-const createPost = (post) => {
+const createPost = (req, res) => {
     const postObj = req.body;
     postControllers
         .createPost(postObj)

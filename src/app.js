@@ -6,7 +6,7 @@ const postRouter = require("./posts/posts.router");
 
 const db = require("./utils/database");
 
-app.use("/", postRouter);
+app.use("/api/v1", postRouter);
 
 db.authenticate()
     .then(() => {
